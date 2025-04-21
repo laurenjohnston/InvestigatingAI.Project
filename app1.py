@@ -70,6 +70,16 @@ st.image("images/wsj2.png")
 st.subheader("Multiple Media Outlets Findings")
 st.image("images/outlets.png")
 
+# ---------------- KEY FINDINGS ----------------
+st.header("Key Findings")
+
+st.markdown("""
+- **Sentiment became more negative following Trump’s election** across both outlets, supporting Hypothesis 1.
+- **HuffPost consistently expressed more negative sentiment** compared to The Wall Street Journal throughout the studied period.
+- **The most dramatic tone shifts occurred in political categories**, validating Hypothesis 2.
+- **Wall Street Journal’s tone was relatively more neutral**, though it still reflected subtle changes post-election.
+- **Editorial focus shifted noticeably after the election**, with increased coverage on politics and societal issues, especially from HuffPost.
+""")
 # ---------------- CONCLUSION ----------------
 st.header("Research Limitations")
 
