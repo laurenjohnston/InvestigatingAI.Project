@@ -71,7 +71,7 @@ st.subheader("Multiple Media Outlets Findings")
 st.image("images/outlets.png")
 
 # ---------------- CONCLUSION ----------------
-st.header("Conclusion")
+st.header("Research Limitations")
 
 st.write("""
 I. **Source bias:** HuffPost is not representative of the entire U.S. media landscape and maintains a distinct editorial stance. That is why we want to expand our research to other headline news datasets.  
