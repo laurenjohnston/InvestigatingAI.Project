@@ -1,69 +1,83 @@
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Trump’s 2016 Win: Media Impact", layout="wide")
+st.set_page_config(page_title="Trump’s 2016 Win: Impact on Media", layout="wide")
 
-# Title
 st.title("Trump’s 2016 Win: Impact on Media")
-st.caption("By Lauren, Marius, Gensei, Bernice")
+st.caption("By Marius, Lauren, Gensei, Bernice — April 22, 2025")
 
-# Section: Introduction
+# ---------------- INTRODUCTION ----------------
 st.header("Introduction")
 st.write("""
-The 2016 U.S. presidential election marked a turning point in American media and politics. 
-This project investigates how the tone of media headlines shifted before and after Trump’s election,
-with a focus on sentiment and thematic trends in left- and right-leaning outlets.
+The 2016 U.S. presidential election marked a turning point in American media and politics, reshaping the media landscape and raising questions about the press’s role in political polarization, the rise of populist discourse, and shifts in news coverage.
 """)
 
-# Section: Research Question & Hypotheses
-st.header("Research Question & Hypotheses")
-st.markdown("""
-**Research Question:**  
-Did the election of Donald Trump in 2016 significantly impact the editorial tone of U.S. media headlines?
-
-**Hypothesis 1:** The average tone of news headlines becomes more negative post-election.  
-**Hypothesis 2:** Political editorial categories show more pronounced tonal shifts than cultural or entertainment content.
+# ---------------- RESEARCH QUESTION ----------------
+st.header("Research Question")
+st.write("""
+Did the election of Donald Trump in 2016 have a significant impact on the editorial tone of news headlines in U.S. media, particularly in terms of emotional polarity and thematic evolution?
 """)
 
-# Section: Methodology
+# ---------------- HYPOTHESES ----------------
+st.header("Hypotheses")
+st.subheader("Hypothesis 1")
+st.write("""
+The average tone of news headlines becomes significantly more negative following the election of Donald Trump, reflecting a more conflictual media climate.
+""")
+st.subheader("Hypothesis 2")
+st.write("""
+Editorial categories related to politics show more pronounced tonal shifts compared to categories focused on culture or entertainment.
+""")
+
+# ---------------- METHODOLOGY ----------------
 st.header("Methodology")
-st.markdown("""
-- **Data Collection:** Headlines from HuffPost (left) & WSJ (right)
-- **Processing:** Cleaning, date formatting, filtering to 2015–2017
-- **Sentiment Analysis:** VADER model (scores -1 to +1)
-- **Aggregation:** Monthly tone by outlet and category
-- **Visualization:** Time series & topic breakdowns
+
+st.subheader("A. Data Collection")
+st.write("""
+We collected news headlines from HuffPost and The Wall Street Journal to represent left- and right-leaning media perspectives.
 """)
 
-# Section: Sentiment Line Chart
-st.subheader("Sentiment Over Time")
-data = pd.read_csv("data/sentiment_scores.csv")
-fig, ax = plt.subplots()
-for outlet in data['outlet'].unique():
-    subset = data[data['outlet'] == outlet]
-    ax.plot(subset['month'], subset['compound_score'], label=outlet)
-plt.xticks(rotation=45)
-plt.legend()
-st.pyplot(fig)
-
-# Section: Findings
-st.header("Findings")
-st.image("images/huffpost.png", caption="HuffPost Headlines")
-st.image("images/wsj.png", caption="Wall Street Journal Headlines")
-st.image("images/multiple_outlets.png", caption="Combined Media Tone Trends")
-
-# Section: Conclusion
-st.header("Conclusion & Limitations")
-st.markdown("""
-- **Tone shifted negatively post-election**, especially in political news
-- **Limitations:**  
-  - Source bias (HuffPost ≠ all left-leaning media)  
-  - VADER lacks nuance (e.g., sarcasm)  
-  - Correlation ≠ causation  
-  - Simplified sentiment scores may overlook linguistic depth
+st.subheader("B. Data Processing")
+st.write("""
+Standardization of column names, handling of missing values, and date formatting. Selection of a temporal subset centered around the election (e.g., 2015–2017).
 """)
 
-# End
+st.subheader("C. Sentiment Analysis")
+st.write("""
+Application of the VADER SentimentIntensityAnalyzer, a tool designed for sentiment analysis of short texts (e.g., headlines). Each headline is assigned a sentiment score ranging from -1 (very negative) to +1 (very positive).
+""")
+
+st.subheader("D. Temporal Aggregation and Analysis")
+st.write("""
+Monthly aggregation of sentiment scores to track global tone evolution. Disaggregation by editorial category (politics, business, society, etc.). Comparison of sentiment before and after the election (temporal break in Jan 2016).
+""")
+
+st.subheader("E. Visualization")
+st.write("""
+Time series plots (line plots, stacked area plots) to illustrate global and sector-specific dynamics. Tracking the evolution of editorial topic proportions over time.
+""")
+
+# ---------------- RESULTS ----------------
+st.header("Results")
+
+st.subheader("HuffPost Findings")
+st.image("images/huffpost.png")
+
+st.subheader("Wall Street Journal Findings")
+st.image("images/wsj.png")
+
+st.subheader("Multiple Media Outlets Findings")
+st.image("images/multiple_outlets.png")
+
+# ---------------- CONCLUSION ----------------
+st.header("Conclusion")
+
+st.write("""
+I. **Source bias:** HuffPost is not representative of the entire U.S. media landscape and maintains a distinct editorial stance. That is why we want to expand our research to other headline news datasets.  
+II. **Limitations of sentiment analysis tools:** While VADER is effective for short texts, it may lack nuance in detecting sarcasm, irony, or complex rhetorical strategies.  
+III. **Causality vs. correlation:** It is difficult to attribute tonal shifts solely to the election, given the influence of concurrent events (e.g., social movements, international crises).  
+IV. **Reduction of linguistic complexity:** Converting headlines into a single numerical sentiment score may obscure subtler stylistic or lexical variations.
+""")
+
+# ---------------- END ----------------
 st.markdown("---")
-st.caption("Streamlit site created as part of an AI & Society class project.")
+st.caption("The End")
