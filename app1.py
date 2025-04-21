@@ -2,16 +2,43 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Media Sentiment & the 2016 Election")
+st.set_page_config(page_title="Trump’s 2016 Win: Media Impact", layout="wide")
 
-st.title("How the 2016 Election Changed Media Tone")
-st.write("Analyzing HuffPost & Wall Street Journal headlines using AI-powered sentiment analysis.")
+# Title
+st.title("Trump’s 2016 Win: Impact on Media")
+st.caption("By Lauren, Marius, Gensei, Bernice")
 
-# Load data
-data = pd.read_csv("data/sentiment_scores.csv")  # Make sure this matches your file name!
+# Section: Introduction
+st.header("Introduction")
+st.write("""
+The 2016 U.S. presidential election marked a turning point in American media and politics. 
+This project investigates how the tone of media headlines shifted before and after Trump’s election,
+with a focus on sentiment and thematic trends in left- and right-leaning outlets.
+""")
 
-# Line Chart
-st.subheader("Sentiment Over Time by Outlet")
+# Section: Research Question & Hypotheses
+st.header("Research Question & Hypotheses")
+st.markdown("""
+**Research Question:**  
+Did the election of Donald Trump in 2016 significantly impact the editorial tone of U.S. media headlines?
+
+**Hypothesis 1:** The average tone of news headlines becomes more negative post-election.  
+**Hypothesis 2:** Political editorial categories show more pronounced tonal shifts than cultural or entertainment content.
+""")
+
+# Section: Methodology
+st.header("Methodology")
+st.markdown("""
+- **Data Collection:** Headlines from HuffPost (left) & WSJ (right)
+- **Processing:** Cleaning, date formatting, filtering to 2015–2017
+- **Sentiment Analysis:** VADER model (scores -1 to +1)
+- **Aggregation:** Monthly tone by outlet and category
+- **Visualization:** Time series & topic breakdowns
+""")
+
+# Section: Sentiment Line Chart
+st.subheader("Sentiment Over Time")
+data = pd.read_csv("data/sentiment_scores.csv")
 fig, ax = plt.subplots()
 for outlet in data['outlet'].unique():
     subset = data[data['outlet'] == outlet]
@@ -20,10 +47,23 @@ plt.xticks(rotation=45)
 plt.legend()
 st.pyplot(fig)
 
-st.subheader("Key Takeaways")
+# Section: Findings
+st.header("Findings")
+st.image("images/huffpost.png", caption="HuffPost Headlines")
+st.image("images/wsj.png", caption="Wall Street Journal Headlines")
+st.image("images/multiple_outlets.png", caption="Combined Media Tone Trends")
+
+# Section: Conclusion
+st.header("Conclusion & Limitations")
 st.markdown("""
-- Sentiment shifted significantly post-election
-- Tone varied by outlet (left vs. right)
-- Political events influenced media framing
+- **Tone shifted negatively post-election**, especially in political news
+- **Limitations:**  
+  - Source bias (HuffPost ≠ all left-leaning media)  
+  - VADER lacks nuance (e.g., sarcasm)  
+  - Correlation ≠ causation  
+  - Simplified sentiment scores may overlook linguistic depth
 """)
 
+# End
+st.markdown("---")
+st.caption("Streamlit site created as part of an AI & Society class project.")
