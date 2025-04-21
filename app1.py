@@ -60,13 +60,15 @@ Time series plots (line plots, stacked area plots) to illustrate global and sect
 st.header("Results")
 
 st.subheader("HuffPost Findings")
-st.image("images/huffpost.png")
+st.image("images/huffpost1.png")
+st.image("images/huffpost2.png")
 
 st.subheader("Wall Street Journal Findings")
-st.image("images/wsj.png")
+st.image("images/wsj1.png")
+st.image("images/wsj2.png")
 
 st.subheader("Multiple Media Outlets Findings")
-st.image("images/multiple_outlets.png")
+st.image("images/outlets.png")
 
 # ---------------- CONCLUSION ----------------
 st.header("Conclusion")
