@@ -4,6 +4,7 @@ st.set_page_config(page_title="The 2016 Campaign Season’s Impact on Media", la
 st.image("images/banner.png", use_column_width=True)
 
 
+
 st.title("The 2016 Campaign Season’s Impact on Media")
 st.caption("By Marius, Lauren, Gensei, Bernice — April 22, 2025")
 
