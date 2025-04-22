@@ -60,7 +60,18 @@ st.subheader("E. Visualization")
 st.write("""
 Time series and stacked area plots were created to visualize sentiment evolution and editorial focus during the campaign season.
 """)
+st.header("🤖 AI Tools in Our Research")
 
+st.markdown("""
+- **VADER**  
+  Used for sentiment analysis to assign polarity scores to headlines (–1 to +1) based on emotional tone
+
+- **Google Colab**  
+  Enabled scalable implementation of VADER for data processing and analysis in a cloud-based environment
+
+- **Streamlit**  
+  Used to build an interactive web app for data visualization and public presentation of findings
+""")
 # ---------------- RESULTS ----------------
 st.header("📊 Results")
 
