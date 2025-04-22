@@ -1,7 +1,8 @@
 import streamlit as st
 
 st.set_page_config(page_title="The 2016 Campaign Season’s Impact on Media", layout="wide")
-st.image("images/banner.png", use_column_width=True)
+st.image("images/banner.png", use_container_width=True)
+
 
 
 
