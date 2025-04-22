@@ -14,7 +14,7 @@ The 2016 U.S. presidential election marked a turning point in American media and
 # ---------------- RESEARCH QUESTION ----------------
 st.header("Research Question")
 st.write("""
-Did the election of Donald Trump in 2016 have a significant impact on the editorial tone of news headlines in U.S. media, particularly in terms of emotional polarity and thematic evolution?
+Did the 2016 presidential election campaign season have a significant impact on the editorial tone of news headlines in U.S. media, particularly in terms of emotional polarity and thematic evolution?
 """)
 
 # ---------------- HYPOTHESES ----------------
