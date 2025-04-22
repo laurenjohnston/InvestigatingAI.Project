@@ -87,24 +87,49 @@ st.subheader("Multiple Media Outlets Findings")
 st.image("images/outlets.png")
 
 # ---------------- KEY FINDINGS ----------------
-st.header("🧠 Key Findings")
+# ---------------- KEY FINDINGS ----------------
+st.header("📊 Key Findings")
 
-st.markdown("""
-- **Sentiment became more negative over the campaign season**, particularly in late 2015 and mid-2016, supporting Hypothesis 1.
-- **HuffPost consistently expressed more negative sentiment** than The Wall Street Journal throughout the campaign timeline.
-- **The most dramatic tone shifts occurred in political categories**, validating Hypothesis 2.
-- **Wall Street Journal’s tone remained relatively neutral**, though subtle changes were still observed around major campaign moments.
-- **Editorial focus shifted over time**, with HuffPost placing more emphasis on socially and politically charged topics as the campaign intensified.
+st.subheader("1. Overall Sentiment Is Negative")
+st.write("""
+Across all sources analyzed, the average sentiment score remained slightly negative throughout the campaign period. 
+There was no dramatic swing in tone before or after the 2016 election — the tone stayed consistently below neutral, 
+with small fluctuations. This supports the idea of a persistent media negativity bias.
 """)
 
-# ---------------- CONCLUSION ----------------
-st.header("⚖️ Research Limitations")
-
+st.subheader("2. No Significant Shift in Tone or Content Volume")
 st.write("""
-I. **Source bias:** HuffPost is not representative of the entire U.S. media landscape and maintains a distinct editorial stance. This is why we aim to expand our analysis to other outlets in future work.  
-II. **Limitations of sentiment analysis tools:** While VADER is effective for short texts, it may lack nuance in detecting sarcasm, irony, or complex rhetorical strategies.  
-III. **Causality vs. correlation:** It's difficult to attribute tonal shifts solely to the campaign season, given the influence of concurrent events such as international crises and domestic unrest.  
-IV. **Reduction of linguistic complexity:** Turning headlines into a single sentiment score may obscure deeper stylistic and rhetorical patterns.
+We found no substantial tonal change tied directly to Trump’s election win, nor did we see a spike or drop in 
+any specific category of article coverage. The proportion of article topics remained relatively steady, 
+challenging our assumption that the media landscape would shift drastically post-election.
+""")
+
+# ---------------- LIMITATIONS ----------------
+st.header("⚠️ Limitations")
+
+st.markdown("""
+**I. Limited Timeline**  
+The two-year dataset restricts our ability to observe long-term sentiment trends or post-election evolution.
+
+**II. Limited Sources**  
+We analyzed a small number of media outlets, which may introduce bias and does not reflect the full diversity of U.S. media.
+
+**III. Sentiment Tool Constraints**  
+VADER captures polarity but misses nuance such as sarcasm, rhetorical framing, or subjectivity in topic selection.
+""")
+
+# ---------------- FUTURE WORK ----------------
+st.header("🔭 Future Work")
+
+st.markdown("""
+**I. Expand Timeline**  
+Analyze headlines over a 10-year span to capture broader political trends and tone shifts across administrations.
+
+**II. Diversify Dataset Sources**  
+Include additional media outlets across the ideological spectrum for a more balanced and holistic view.
+
+**III. Deepen Analysis**  
+Incorporate content-based sentiment analysis to examine **what** topics were covered — not just **how** they were framed.
 """)
 
 st.markdown("---")
