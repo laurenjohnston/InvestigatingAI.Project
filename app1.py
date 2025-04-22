@@ -136,4 +136,4 @@ st.markdown("---")
 st.caption("Streamlit site created for AI & Society Research Project — Spring 2025")
 # ---------------- END ----------------
 st.markdown("---")
-st.caption("The End")
+st.caption("The End.")
