@@ -26,11 +26,11 @@ How did the tone of U.S. media headlines evolve during the final two years of th
 st.header("🧠 Hypotheses")
 st.subheader("Hypothesis 1")
 st.write("""
-The average tone of news headlines becomes increasingly negative over the course of the 2016 campaign season, reflecting rising political tension and public polarization.
+The average tone of news headlines becomes significantly more negative during the 2016 election, reflecting a more conflictual media climate.
 """)
 st.subheader("Hypothesis 2")
 st.write("""
-Editorial categories related to politics exhibit more dramatic tonal shifts during the campaign period compared to non-political categories like culture or entertainment.
+Editorial categories related to politics show more pronounced tonal shifts compared to categories focused on culture or entertainment.
 """)
 
 # ---------------- METHODOLOGY ----------------
@@ -130,6 +130,15 @@ Include additional media outlets across the ideological spectrum for a more bala
 
 **III. Deepen Analysis**  
 Incorporate content-based sentiment analysis to examine **what** topics were covered — not just **how** they were framed.
+""")
+
+st.header("🔭 References")
+
+st.markdown("""
+**Kaggle. (2023). Wall Street Journal Articles, 2014–2020. Retrieved from https://www.kaggle.com
+
+**Kaggle. (2022). News Category Dataset. Retrieved from https://www.kaggle.com/datasets/rmisra/news-category-dataset
+
 """)
 
 st.markdown("---")
